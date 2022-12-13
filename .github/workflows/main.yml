@@ -15,7 +15,7 @@ jobs:
         submodules: recursive
     - name: List files in the repository (Useful for debugging)
       run: |
-        ls -lra ${{ github.workspace }}
+        tree ${{ github.workspace }}
 #       - name: Commit the results
 #         run: |
 #           git config --local user.name "robot"
