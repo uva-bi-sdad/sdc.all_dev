@@ -7,3 +7,5 @@ Follow [this link](https://github.blog/2016-02-01-working-with-submodules/), but
 ```shell
 git submodule add https://github.com/<user>/rock rock
 ```
+
+Also note that submodules are consistency > convenience, meaning there is an implicit assumption that this repository will push no changes to the submodules 
