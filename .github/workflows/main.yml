@@ -2,6 +2,9 @@ name: Routine submodule updates
 on:
   schedule:
     - cron: '53 19 * * TUE'
+  push: 
+    branches:
+      - 'main'
 jobs:
   update_submodules:
     runs-on: ubuntu-latest
