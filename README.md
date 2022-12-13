@@ -14,3 +14,10 @@ Can be possible to [push and update submoudles](https://stackoverflow.com/questi
 ```
 git push --recurse-submodules=on-demand
 ```
+
+## To clone things with submodules
+Reference this [stackoverflow article](https://stackoverflow.com/questions/3796927/how-do-i-git-clone-a-repo-including-its-submodules), but
+
+```
+git clone --recurse-submodules -j8 git://github.com/foo/bar.git
+```
