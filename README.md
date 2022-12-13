@@ -9,3 +9,8 @@ git submodule add https://github.com/<user>/rock rock
 ```
 
 Also note that submodules are consistency > convenience, meaning there is an implicit assumption that this repository will push no changes to the submodules 
+
+Can be possible to [push and update submoudles](https://stackoverflow.com/questions/5814319/git-submodule-push), too though
+```
+git push --recurse-submodules=on-demand
+```
