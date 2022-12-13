@@ -15,7 +15,7 @@ jobs:
           git add .
           git commit -m "auto submodule updates"
       - name: Push changes 
-        uses: ad-m/github-push-action@main
+        uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           force: true
