@@ -9,13 +9,13 @@ jobs:
   update_submodules:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@master
-      - name: Checkout submodules
-        uses: textbook/git-checkout-submodule-action@master
-      - name: List files in the repository (Useful for debugging)
-        run: |
-          ls -lra ${{ github.workspace }}
+    - name: Checkout repository and submodules
+      uses: actions/checkout@v2
+      with:
+        submodules: recursive
+    - name: List files in the repository (Useful for debugging)
+      run: |
+        ls -lra ${{ github.workspace }}
 #       - name: Commit the results
 #         run: |
 #           git config --local user.name "robot"
