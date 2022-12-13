@@ -1,0 +1,21 @@
+name: Routine submodule updates
+on:
+  schedule:
+    - cron: '00 10 * * TUE'
+jobs:
+  update_submodules:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Recursive submodule updates
+        run: |
+          git submodule update --init --recursive
+      - name: Commit the results
+        run: |
+          git config --local user.name "robot"
+          git add .
+          git commit -m "auto submodule updates"
+      - name: Push changes 
+        uses: ad-m/github-push-action@main
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          force: true
