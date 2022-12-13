@@ -9,6 +9,10 @@ jobs:
   update_submodules:
     runs-on: ubuntu-latest
     steps:
+      - name: Check out repository code
+        uses: actions/checkout@master
+        with:
+          submodules: "recursive"
       - name: List files in the repository (Useful for debugging)
         run: |
           ls -la ${{ github.workspace }}
