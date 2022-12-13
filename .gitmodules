@@ -1,0 +1,30 @@
+[submodule "sdc.housing"]
+	path = sdc.housing
+	url = git@github.com:uva-bi-sdad/sdc.housing.git
+[submodule "sdc.financial_well_being"]
+	path = sdc.financial_well_being
+	url = git@github.com:uva-bi-sdad/sdc.financial_well_being.git
+[submodule "sdc.demographics"]
+	path = sdc.demographics
+	url = git@github.com:uva-bi-sdad/sdc.demographics.git
+[submodule "sdc.business_climate"]
+	path = sdc.business_climate
+	url = git@github.com:uva-bi-sdad/sdc.business_climate.git
+[submodule "sdc.education"]
+	path = sdc.education
+	url = git@github.com:uva-bi-sdad/sdc.education.git
+[submodule "sdc.transportation"]
+	path = sdc.transportation
+	url = git@github.com:uva-bi-sdad/sdc.transportation.git
+[submodule "sdc.food"]
+	path = sdc.food
+	url = git@github.com:uva-bi-sdad/sdc.food.git
+[submodule "sdc.broadband"]
+	path = sdc.broadband
+	url = git@github.com:uva-bi-sdad/sdc.broadband.git
+[submodule "sdc.geographies"]
+	path = sdc.geographies
+	url = git@github.com:uva-bi-sdad/sdc.geographies.git
+[submodule "sdc.health"]
+	path = sdc.health
+	url = git@github.com:uva-bi-sdad/sdc.health.git
