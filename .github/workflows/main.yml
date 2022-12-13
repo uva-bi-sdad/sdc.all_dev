@@ -1,7 +1,7 @@
 name: Routine submodule updates
 on:
   schedule:
-    - cron: '15 16 * * TUE'
+    - cron: '55 16 * * TUE'
 jobs:
   update_submodules:
     runs-on: ubuntu-latest
