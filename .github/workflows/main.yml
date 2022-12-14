@@ -16,6 +16,16 @@ jobs:
     - name: List files in the repository (Useful for debugging)
       run: |
         tree ${{ github.workspace }}
+    - name: setup python
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.10.6 #install the python needed
+    - name: Install requirements
+      run: |
+        pip install -r requirements.txt        
+    - name: Run column name check and export to docs
+      run: |
+        python test_columns.py 
     - name: Commit the results
       run: |
         git config --local user.name "robot"
