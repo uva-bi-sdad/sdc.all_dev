@@ -1,30 +1,30 @@
 [submodule "sdc.housing"]
-	path = sdc.housing
+	path = repos/sdc.housing/sdc.housing
 	url = git@github.com:uva-bi-sdad/sdc.housing.git
 [submodule "sdc.financial_well_being"]
-	path = sdc.financial_well_being
+	path = repos/sdc.financial_well_being/sdc.financial_well_being
 	url = git@github.com:uva-bi-sdad/sdc.financial_well_being.git
 [submodule "sdc.demographics"]
-	path = sdc.demographics
+	path = repos/sdc.demographics/sdc.demographics
 	url = git@github.com:uva-bi-sdad/sdc.demographics.git
 [submodule "sdc.business_climate"]
-	path = sdc.business_climate
+	path = repos/sdc.business_climate/sdc.business_climate
 	url = git@github.com:uva-bi-sdad/sdc.business_climate.git
 [submodule "sdc.education"]
-	path = sdc.education
+	path = repos/sdc.education/sdc.education
 	url = git@github.com:uva-bi-sdad/sdc.education.git
 [submodule "sdc.transportation"]
-	path = sdc.transportation
+	path = repos/sdc.transportation/sdc.transportation
 	url = git@github.com:uva-bi-sdad/sdc.transportation.git
 [submodule "sdc.food"]
-	path = sdc.food
+	path = repos/sdc.food/sdc.food
 	url = git@github.com:uva-bi-sdad/sdc.food.git
 [submodule "sdc.broadband"]
-	path = sdc.broadband
+	path = repos/sdc.broadband/sdc.broadband
 	url = git@github.com:uva-bi-sdad/sdc.broadband.git
 [submodule "sdc.geographies"]
-	path = sdc.geographies
+	path = repos/sdc.geographies/sdc.geographies
 	url = git@github.com:uva-bi-sdad/sdc.geographies.git
 [submodule "sdc.health"]
-	path = sdc.health
+	path = repos/sdc.health/sdc.health
 	url = git@github.com:uva-bi-sdad/sdc.health.git
