@@ -31,7 +31,6 @@ jobs:
         python test_file_ext.py
     - name: Commit the results
       run: |
-        git pull
         git config --local user.name "robot"
         git add -A
         git commit -m "auto submodule updates"
