@@ -31,8 +31,9 @@ jobs:
         python test_file_ext.py
     - name: Commit the results
       run: |
+        git pull
         git config --local user.name "robot"
-        git add .
+        git add -A
         git commit -m "auto submodule updates"
     - name: Push changes
       uses: ad-m/github-push-action@master
@@ -42,7 +43,7 @@ jobs:
     - name: Remove github things # Required so that you can push to another directory
       run: |
         rm -rf .git
-    - name: Remove github things # Required so that you can push to another directory
+    - name: Remove github submodules # Required so that you can push to another directory
       run: |
         rm .gitmodules
     - name: Push directory to another repository
