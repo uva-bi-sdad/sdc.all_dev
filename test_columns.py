@@ -64,7 +64,7 @@ if __name__ == "__main__":
     print(req_cols)
 
     report = evaluate_folder(req_cols, "./repos")
-    time_checked = datetime.now().strftime("%YY-%m-%d %H:%M:%S")
+    time_checked = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
     print(time_checked)
 
