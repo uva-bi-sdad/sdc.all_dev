@@ -22,7 +22,7 @@ jobs:
         python-version: 3.10.6 #install the python needed
     - name: Install requirements
       run: |
-        pip install -r auditor/requirements.txt        
+        pip install -r requirements.txt        
     - name: Run column name check and export to docs
       run: |
         python test_columns.py 
