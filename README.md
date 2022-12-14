@@ -19,5 +19,5 @@ git push --recurse-submodules=on-demand
 Reference this [stackoverflow article](https://stackoverflow.com/questions/3796927/how-do-i-git-clone-a-repo-including-its-submodules), but
 
 ```
-git clone --recurse-submodules -j8 git@github.com:uva-bi-sdad/data_center.git
+git clone --recurse-submodules -j8 git@github.com:uva-bi-sdad/test_data_center.git
 ```
