@@ -26,6 +26,9 @@ jobs:
     - name: Run column name check and export to docs
       run: |
         python test_columns.py 
+    - name: Run file extension test and export to docs
+      run: |
+        python test_file_ext.py
     - name: Commit the results
       run: |
         git config --local user.name "robot"
