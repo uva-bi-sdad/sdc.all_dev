@@ -28,3 +28,30 @@
 [submodule "sdc.health"]
 	path = sdc.health
 	url = git@github.com:uva-bi-sdad/sdc.health.git
+[submodule "repos/sdc.broadband"]
+	path = repos/sdc.broadband
+	url = https://github.com/uva-bi-sdad/sdc.broadband
+[submodule "repos/sdc.housing"]
+	path = repos/sdc.housing
+	url = https://github.com/uva-bi-sdad/sdc.housing
+[submodule "repos/sdc.financial_well_being"]
+	path = repos/sdc.financial_well_being
+	url = https://github.com/uva-bi-sdad/sdc.financial_well_being
+[submodule "repos/sdc.demographics"]
+	path = repos/sdc.demographics
+	url = https://github.com/uva-bi-sdad/sdc.demographics
+[submodule "repos/sdc.education"]
+	path = repos/sdc.education
+	url = https://github.com/uva-bi-sdad/sdc.education
+[submodule "repos/sdc.transportation"]
+	path = repos/sdc.transportation
+	url = https://github.com/uva-bi-sdad/sdc.transportation
+[submodule "repos/sdc.food"]
+	path = repos/sdc.food
+	url = https://github.com/uva-bi-sdad/sdc.food
+[submodule "repos/sdc.geographies"]
+	path = repos/sdc.geographies
+	url = https://github.com/uva-bi-sdad/sdc.geographies
+[submodule "repos/sdc.health"]
+	path = repos/sdc.health
+	url = https://github.com/uva-bi-sdad/sdc.health
