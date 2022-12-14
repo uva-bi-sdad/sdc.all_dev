@@ -45,6 +45,9 @@ jobs:
     - name: Remove github submodules # Required so that you can push to another directory
       run: |
         rm .gitmodules
+    - name: Remove github workflow # Required so that you can push to another directory
+      run: |
+        rm -rf .github        
     - name: Push directory to another repository
       uses: cpina/github-action-push-to-another-repository@main
       env:
