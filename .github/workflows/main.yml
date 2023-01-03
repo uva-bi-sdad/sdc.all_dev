@@ -11,8 +11,8 @@ jobs:
     steps:
     - name: Checkout repository and submodules
       uses: actions/checkout@v2
-    - name: Checkout submodules
-      run: git submodule update --init --recursive
+    - name: Checkout latest submodules
+      run: git submodule update --init --recursive --remote
     - name: List files in the repository (Useful for debugging)
       run: |
         tree ${{ github.workspace }}
