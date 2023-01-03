@@ -55,6 +55,6 @@
 [submodule "repos/sdc.health"]
 	path = repos/sdc.health
 	url = https://github.com/uva-bi-sdad/sdc.health
-[submodule "repos/sdc.business_climate_dev"]
-	path = repos/sdc.business_climate_dev
-	url = git@github.com:uva-bi-sdad/sdc.business_climate_dev.git
+[submodule "repos/sdc.business_climate"]
+	path = repos/sdc.business_climate
+	url = git@github.com:uva-bi-sdad/sdc.business_climate.git
