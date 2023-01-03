@@ -65,7 +65,7 @@ if __name__ == "__main__":
     req_cols = set(req_cols)
     print(req_cols)
 
-    report = evaluate_folder(req_cols, "../../repos")
+    report = evaluate_folder(req_cols, "./data")
     tz = timezone("EST")
     time_checked = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
 
