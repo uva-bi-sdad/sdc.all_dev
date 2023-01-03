@@ -1,60 +1,30 @@
-[submodule "sdc.housing"]
-	path = sdc.housing
-	url = git@github.com:uva-bi-sdad/sdc.housing.git
-[submodule "sdc.financial_well_being"]
-	path = sdc.financial_well_being
-	url = git@github.com:uva-bi-sdad/sdc.financial_well_being.git
-[submodule "sdc.demographics"]
-	path = sdc.demographics
-	url = git@github.com:uva-bi-sdad/sdc.demographics.git
-[submodule "sdc.business_climate"]
-	path = sdc.business_climate
-	url = git@github.com:uva-bi-sdad/sdc.business_climate.git
-[submodule "sdc.education"]
-	path = sdc.education
-	url = git@github.com:uva-bi-sdad/sdc.education.git
-[submodule "sdc.transportation"]
-	path = sdc.transportation
-	url = git@github.com:uva-bi-sdad/sdc.transportation.git
-[submodule "sdc.food"]
-	path = sdc.food
-	url = git@github.com:uva-bi-sdad/sdc.food.git
-[submodule "sdc.broadband"]
-	path = sdc.broadband
-	url = git@github.com:uva-bi-sdad/sdc.broadband.git
-[submodule "sdc.geographies"]
-	path = sdc.geographies
-	url = git@github.com:uva-bi-sdad/sdc.geographies.git
-[submodule "sdc.health"]
-	path = sdc.health
-	url = git@github.com:uva-bi-sdad/sdc.health.git
 [submodule "repos/sdc.broadband"]
-	path = repos/sdc.broadband
+	path = data/sdc.broadband
 	url = https://github.com/uva-bi-sdad/sdc.broadband
 [submodule "repos/sdc.housing"]
-	path = repos/sdc.housing
+	path = data/sdc.housing
 	url = https://github.com/uva-bi-sdad/sdc.housing
 [submodule "repos/sdc.financial_well_being"]
-	path = repos/sdc.financial_well_being
+	path = data/sdc.financial_well_being
 	url = https://github.com/uva-bi-sdad/sdc.financial_well_being
 [submodule "repos/sdc.demographics"]
-	path = repos/sdc.demographics
+	path = data/sdc.demographics
 	url = https://github.com/uva-bi-sdad/sdc.demographics
 [submodule "repos/sdc.education"]
-	path = repos/sdc.education
+	path = data/sdc.education
 	url = https://github.com/uva-bi-sdad/sdc.education
 [submodule "repos/sdc.transportation"]
-	path = repos/sdc.transportation
+	path = data/sdc.transportation
 	url = https://github.com/uva-bi-sdad/sdc.transportation
 [submodule "repos/sdc.food"]
-	path = repos/sdc.food
+	path = data/sdc.food
 	url = https://github.com/uva-bi-sdad/sdc.food
 [submodule "repos/sdc.geographies"]
-	path = repos/sdc.geographies
+	path = data/sdc.geographies
 	url = https://github.com/uva-bi-sdad/sdc.geographies
 [submodule "repos/sdc.health"]
-	path = repos/sdc.health
+	path = data/sdc.health
 	url = https://github.com/uva-bi-sdad/sdc.health
 [submodule "repos/sdc.business_climate"]
-	path = repos/sdc.business_climate
+	path = data/sdc.business_climate
 	url = https://github.com/uva-bi-sdad/sdc.business_climate.git
