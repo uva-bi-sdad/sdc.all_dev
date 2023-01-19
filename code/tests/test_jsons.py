@@ -29,7 +29,7 @@ def evaluate_folder(dirpath):
             parent_dir = path.parent
 
             if path.suffix in [".json"]:
-                full_path = path.name
+                full_path = path.resolve()
                 try:
                     j = json.load(open(path.resolve()))
                     report += "\t<p>[VALID] %s</p>\n" % (full_path)
