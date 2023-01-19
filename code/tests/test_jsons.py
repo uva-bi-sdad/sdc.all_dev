@@ -63,5 +63,5 @@ if __name__ == "__main__":
     )
 
     print(t.substitute(time_checked=time_checked, report=report))
-    with open("./docs/test_json.html", "w") as f:
+    with open("./docs/test_jsons.html", "w") as f:
         f.write(t.substitute(time_checked=time_checked, report=report))
