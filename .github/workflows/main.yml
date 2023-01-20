@@ -33,6 +33,7 @@ jobs:
     - name: Commit the results
       run: |
         git config --local user.name "robot"
+        git config --local user.email "biocomplexity-info@virginia.edu"
         git add -A
         git commit -m "auto submodule updates"
     - name: Push changes
