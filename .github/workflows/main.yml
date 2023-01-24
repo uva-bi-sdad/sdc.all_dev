@@ -22,7 +22,7 @@ jobs:
         python-version: 3.10.6 #install the python needed
     - name: Install requirements
       run: |
-        pip install -r code/tests/requirements.txt        
+        pip install -r code/requirements.txt        
     - name: Run all tests (that match with test_*.py under tests)
       run: |
         for f in code/tests/test_*.py; do python "$f"; done
