@@ -30,6 +30,9 @@ jobs:
     - name: Run data inventory 
       run: |
         python code/inventory/data_inventory.py
+    - name: Combine all measure_info into measure_info_all (this is the current state, not the known correct state)
+      run: |
+        python code/combine_measure_info.py     
     - name: Commit the results
       run: |
         git config --local user.name "robot"
