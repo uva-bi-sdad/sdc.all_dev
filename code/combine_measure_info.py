@@ -9,17 +9,21 @@ import urllib.request
 from string import Template
 import traceback
 from pytz import timezone
-from test import Test
+from tqdm import tqdm
+
+"""
+Iterate through each folder and consolidate existing measure infos to create a finalized list for use in the dc.metadata repository offline
+"""
 
 
-def evaluate_folder(dirpath):
-    report = ""
-
-    for dir in os.listdir(dirpath):
+def combine_measure_info(dirpath):
+    merged_json = {}
+    fail = []
+    for dir in tqdm(os.listdir(dirpath)):
         subdir = os.path.join(dirpath, dir)
         if not os.path.isdir(subdir):
             continue
-        report += "<h3> %s </h3>\n" % (dir)
+
         for path in sorted(Path(subdir).rglob("distribution/**/*")):
             logging.debug("\tEvaluating: %s" % path.name)
 
@@ -29,22 +33,23 @@ def evaluate_folder(dirpath):
 
             parent_dir = path.parent
 
-            if path.suffix in [".json"]:
-                full_path = path.resolve()
+            if path.name == "measure_info.json":
                 try:
                     j = json.load(open(path.resolve()))
-                    report += "\t<p>[VALID] %s</p>\n" % (full_path)
+                    merged_json |= j  # merge two dictionaries
                 except:
                     print(traceback.format_exc())
-                    report += "\t<p>[FAIL] %s</p>\n" % (full_path)
-    return report
+                    fail.append(path.resolve())
+    return merged_json, fail
 
 
 if __name__ == "__main__":
-    report = evaluate_folder("./data")
-    test = Test(
-        __file__,
-        "Json test",
-        "Checks whether encountered jsons are valid jsons that can be read",
-    )
-    test.export_html(report)
+    merged_json, fail = combine_measure_info(".")
+    # print(merged_json)
+    print("Merge completed. Total fail count: %s" % (len(fail)))
+    print("-" * 80)
+    for f in fail:
+        print(f)
+    print("-" * 80)
+    with open("./data/measure_info_all.json", "w") as f:
+        json.dump(merged_json, f, sort_keys=True, indent=4)
