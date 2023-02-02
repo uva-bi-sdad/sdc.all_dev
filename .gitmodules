@@ -30,4 +30,4 @@
 	url = https://github.com/uva-bi-sdad/sdc.business_climate.git
 [submodule "code/sdc.tests"]
 	path = code/sdc.tests
-	url = git@github.com:uva-bi-sdad/sdc.tests.git
+	url = https://github.com/uva-bi-sdad/sdc.tests.git
