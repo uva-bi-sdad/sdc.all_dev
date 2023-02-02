@@ -23,9 +23,9 @@ jobs:
     - name: Install requirements
       run: |
         pip install -r code/requirements.txt        
-    - name: Run all tests (that match with test_*.py under tests)
+    - name: Run all tests (that match with test_*.py under the sdc.tests submodule)
       run: |
-        for f in code/tests/test_*.py; do python "$f"; done
+        for f in code/sdc.tests/code/tests/test_*.py; do python "$f"; done
         python code/tests/test_columns.py
     - name: Run data inventory 
       run: |
