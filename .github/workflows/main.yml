@@ -29,6 +29,9 @@ jobs:
     - name: Run data inventory 
       run: |
         python code/inventory/data_inventory.py
+    - name: Run geographies list       
+      run: |       
+        python code/inventory/geographies_list.py
     - name: Combine all measure_info into measure_info_all (this is the current state, not the known correct state)
       run: |
         python code/combine_measure_info.py     
