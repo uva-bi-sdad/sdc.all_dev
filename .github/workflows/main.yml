@@ -16,6 +16,11 @@ jobs:
     - name: List files in the repository (Useful for debugging)
       run: |
         tree ${{ github.workspace }}
+  run_tests:
+    needs: update_submodules
+    if: success()
+    runs-on: ubuntu-latest
+    steps:
     - name: setup python
       uses: actions/setup-python@v4
       with:
@@ -26,6 +31,11 @@ jobs:
     - name: Run all tests (that match with test_*.py under the sdc.tests submodule)
       run: |
         for f in code/sdc.tests/code/tests/test_*.py; do python "$f"; done
+  run_inventory:
+    needs: update_submodules
+    if: success()
+    runs-on: ubuntu-latest
+    steps:
     - name: Run data inventory 
       run: |
         python code/inventory/data_inventory.py
@@ -34,7 +44,12 @@ jobs:
         python code/inventory/geographies_list.py
     - name: Combine all measure_info into measure_info_all (this is the current state, not the known correct state)
       run: |
-        python code/combine_measure_info.py     
+        python code/combine_measure_info.py  
+  commit_results:
+    needs: [update_submodules, run_tests, run_inventory]
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+    steps:
     - name: Commit the results
       run: |
         git config --local user.name "robot"
@@ -46,6 +61,11 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         branch: ${{ github.ref }}
+  push_to_public:
+    needs: [update_submodules, run_tests, run_inventory, commit_results]
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+    steps:
     - name: Remove github things # Required so that you can push to another directory
       run: |
         rm -rf .git
