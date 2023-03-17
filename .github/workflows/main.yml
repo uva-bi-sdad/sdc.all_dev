@@ -37,9 +37,10 @@ jobs:
         python code/inventory/geographies_list.py  
     - name: Adding index.html with reference to all the sites
       run: |
-        find docs -name "*.html" | cut -c 5- > docs/temp.html
-        cat docs/temp.html | while read line; do printf "<a href='https://uva-bi-sdad.github.io/sdc.all_dev/${line}'> $line </a>\n" >> docs/index.html; done
-        rm docs/temp.html
+        rm docs/index.html
+        find docs -name "*.html" | cut -c 5- > docs/temp
+        cat docs/temp | while read line; do printf "<a href='https://uva-bi-sdad.github.io/sdc.all_dev/${line}'> $line </a>\n" >> docs/index.html; done
+        rm docs/temp
     - name: Commit the results
       run: |
         git config --local user.email "actions@github.com"
