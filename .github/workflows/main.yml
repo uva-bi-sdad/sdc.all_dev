@@ -21,13 +21,16 @@ jobs:
     if: success()
     runs-on: ubuntu-latest
     steps:
+    - name: List files in the repository (Useful for debugging)
+      run: |
+        tree ${{ github.workspace }}
     - name: setup python
       uses: actions/setup-python@v4
       with:
         python-version: 3.10.6 #install the python needed
     - name: Install requirements
       run: |
-        pip install -r code/sdc.tests/code/requirements.txt    
+        pip install -r ${{ github.workspace }}/code/sdc.tests/code/requirements.txt    
   run_tests:
     needs: install_python_ve
     if: success()
@@ -35,7 +38,7 @@ jobs:
     steps:     
     - name: Run all tests (that match with test_*.py under the sdc.tests submodule)
       run: |
-        for f in code/sdc.tests/code/tests/test_*.py; do python "$f"; done
+        for f in ${{ github.workspace }}/code/sdc.tests/code/tests/test_*.py; do python "$f"; done
   run_inventory:
     needs: install_python_ve
     if: success()
