@@ -39,7 +39,9 @@ jobs:
       run: |
         rm docs/index.html
         find docs -name "*.html" | cut -c 5- > docs/temp
-        cat docs/temp | while read line; do printf "<a href='https://uva-bi-sdad.github.io/sdc.all_dev/${line}'> $line </a>\n" >> docs/index.html; done
+        printf "<ol>\n" >> docs/index.html
+        cat docs/temp | while read line; do printf "\t<li><a href='https://uva-bi-sdad.github.io/sdc.all_dev/${line}'> $line </a></li>\n" >> docs/index.html; done
+        printf "</ol>\n" >> docs/index.html
         rm docs/temp
     - name: Commit the results
       run: |
