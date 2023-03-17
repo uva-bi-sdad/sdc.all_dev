@@ -6,18 +6,18 @@ on:
     branches:
       - 'main'
 jobs:
-  update_submodules:
+  initialize:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository and submodules
-      uses: actions/checkout@v2
+      uses: actions/checkout@master
     - name: Checkout latest submodules
       run: git submodule update --init --recursive --remote
     - name: List files in the repository (Useful for debugging)
       run: |
         tree ${{ github.workspace }}
   install_python_ve:
-    needs: update_submodules
+    needs: initialize
     if: success()
     runs-on: ubuntu-latest
     steps:
@@ -56,23 +56,26 @@ jobs:
       run: |       
         python code/inventory/geographies_list.py 
   commit_results:
-    needs: [update_submodules, run_tests, run_inventory]
+    needs: [run_tests, run_inventory]
     if: ${{ always() }}
     runs-on: ubuntu-latest
     steps:
+    - name: List files in the repository (Useful for debugging)
+      run: |
+        tree ${{ github.workspace }}    
     - name: Commit the results
       run: |
-        git config --local user.name "robot"
-        git config --local user.email "biocomplexity-info@virginia.edu"
-        git add -A
-        git commit -m "auto submodule updates"
+        git config --local user.email "actions@github.com"
+        git config --local user.name "GitHub Actions"
+        git add .
+        git commit -m "Automated manifest update"
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         branch: ${{ github.ref }}
   push_to_public:
-    needs: [update_submodules, run_tests, run_inventory, commit_results]
+    needs: [commit_results]
     if: ${{ always() }}
     runs-on: ubuntu-latest
     steps:
