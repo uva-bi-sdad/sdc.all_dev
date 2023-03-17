@@ -38,7 +38,7 @@ jobs:
     - name: Adding index.html with reference to all the sites
       run: |
         find docs -name "*.html" | cut -c 5- > docs/index.html
-        cat docs/index.html | while read line; do echo <a href=https://uva-bi-sdad.github.io/sdc.all_dev/${line}> $line </a>\n; done
+        cat docs/index.html | while read line; do echo <a href="https://uva-bi-sdad.github.io/sdc.all_dev/${line}"> $line </a>\n; done > docs/index.html
     - name: Commit the results
       run: |
         git config --local user.email "actions@github.com"
