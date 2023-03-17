@@ -38,7 +38,7 @@ jobs:
     - name: Adding index.html with reference to all the sites
       run: |
         find docs -name "*.html" | cut -c 5- > docs/temp.html
-        cat docs/temp.html | while read line; do echo "<a href='https://uva-bi-sdad.github.io/sdc.all_dev/${line}'> $line </a>\n" >> docs/index.html; done
+        cat docs/temp.html | while read line; do printf "<a href='https://uva-bi-sdad.github.io/sdc.all_dev/${line}'> $line </a>\n" >> docs/index.html; done
         rm docs/temp.html
     - name: Commit the results
       run: |
