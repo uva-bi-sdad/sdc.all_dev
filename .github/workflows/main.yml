@@ -6,7 +6,7 @@ on:
     branches:
       - 'main'
 jobs:
-  initialize:
+  housekeeping:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository and submodules
@@ -16,72 +16,36 @@ jobs:
     - name: List files in the repository (Useful for debugging)
       run: |
         tree ${{ github.workspace }}
-  install_python_ve:
-    needs: initialize
-    if: success()
-    runs-on: ubuntu-latest
-    steps:
-    - name: List files in the repository (Useful for debugging)
-      run: |
-        tree ${{ github.workspace }}
     - name: setup python
       uses: actions/setup-python@v4
       with:
         python-version: 3.10.6 #install the python needed
     - name: Install requirements
       run: |
-        pip install -r ${{ github.workspace }}/code/sdc.tests/code/requirements.txt    
-  run_tests:
-    needs: install_python_ve
-    if: success()
-    runs-on: ubuntu-latest
-    steps:     
+        pip install -r ${{ github.workspace }}/code/sdc.tests/code/requirements.txt      
     - name: Run all tests (that match with test_*.py under the sdc.tests submodule)
       run: |
-        for f in ${{ github.workspace }}/code/sdc.tests/code/tests/test_*.py; do python "$f"; done
-  run_inventory:
-    needs: install_python_ve
-    if: success()
-    runs-on: ubuntu-latest
-    steps:
+        for f in code/sdc.tests/code/tests/test_*.py; do python "$f"; done
     - name: Run data inventory 
       run: |
         python code/inventory/data_inventory.py
     - name: Combine all measure_info into measure_info_all (this is the current state, not the known correct state)
       run: |
-        python code/combine_measure_info.py         
-  run_geographies:
-    needs: install_python_ve
-    if: success()
-    runs-on: ubuntu-latest
-    steps:        
+        python code/combine_measure_info.py           
     - name: Run geographies list       
       run: |       
-        python code/inventory/geographies_list.py 
-  commit_results:
-    needs: [run_tests, run_inventory]
-    if: ${{ always() }}
-    runs-on: ubuntu-latest
-    steps:
-    - name: List files in the repository (Useful for debugging)
-      run: |
-        tree ${{ github.workspace }}    
+        python code/inventory/geographies_list.py  
     - name: Commit the results
       run: |
         git config --local user.email "actions@github.com"
         git config --local user.name "GitHub Actions"
         git add .
         git commit -m "Automated manifest update"
-    - name: Push changes
+    - name: Push changes to current repository
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        branch: ${{ github.ref }}
-  push_to_public:
-    needs: [commit_results]
-    if: ${{ always() }}
-    runs-on: ubuntu-latest
-    steps:
+        branch: ${{ github.ref }}      
     - name: Remove github things # Required so that you can push to another directory
       run: |
         rm -rf .git
@@ -90,7 +54,34 @@ jobs:
         rm .gitmodules
     - name: Remove github workflow # Required so that you can push to another directory
       run: |
-        rm -rf .github        
+        rm -rf .github       
+    - name: Push directory to another repository
+      uses: cpina/github-action-push-to-another-repository@main
+      env:
+        SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
+      with:
+        source-directory: .
+        destination-github-username: 'uva-bi-sdad'
+        destination-repository-name: 'sdc.all'
+        target-branch: main        
+  on_fail:
+    if: ${{ failure() }} # still push the total public one to sdc.all on fail
+    needs: housekeeping
+    runs-on: ubuntu-latest
+    steps:        
+    - name: Checkout repository and submodules
+      uses: actions/checkout@master
+    - name: Checkout latest submodules
+      run: git submodule update --init --recursive --remote
+    - name: Remove github things # Required so that you can push to another directory
+      run: |
+        rm -rf .git
+    - name: Remove github submodules # Required so that you can push to another directory
+      run: |
+        rm .gitmodules
+    - name: Remove github workflow # Required so that you can push to another directory
+      run: |
+        rm -rf .github       
     - name: Push directory to another repository
       uses: cpina/github-action-push-to-another-repository@main
       env:
