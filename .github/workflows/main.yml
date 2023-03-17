@@ -16,7 +16,7 @@ jobs:
     - name: List files in the repository (Useful for debugging)
       run: |
         tree ${{ github.workspace }}
-  run_tests:
+  install_python_ve:
     needs: update_submodules
     if: success()
     runs-on: ubuntu-latest
@@ -27,24 +27,34 @@ jobs:
         python-version: 3.10.6 #install the python needed
     - name: Install requirements
       run: |
-        pip install -r code/requirements.txt        
+        pip install -r code/sdc.tests/code/requirements.txt    
+  run_tests:
+    needs: install_python_ve
+    if: success()
+    runs-on: ubuntu-latest
+    steps:     
     - name: Run all tests (that match with test_*.py under the sdc.tests submodule)
       run: |
         for f in code/sdc.tests/code/tests/test_*.py; do python "$f"; done
   run_inventory:
-    needs: update_submodules
+    needs: install_python_ve
     if: success()
     runs-on: ubuntu-latest
     steps:
     - name: Run data inventory 
       run: |
         python code/inventory/data_inventory.py
-    - name: Run geographies list       
-      run: |       
-        python code/inventory/geographies_list.py
     - name: Combine all measure_info into measure_info_all (this is the current state, not the known correct state)
       run: |
-        python code/combine_measure_info.py  
+        python code/combine_measure_info.py         
+  run_geographies:
+    needs: install_python_ve
+    if: success()
+    runs-on: ubuntu-latest
+    steps:        
+    - name: Run geographies list       
+      run: |       
+        python code/inventory/geographies_list.py 
   commit_results:
     needs: [update_submodules, run_tests, run_inventory]
     if: ${{ always() }}
