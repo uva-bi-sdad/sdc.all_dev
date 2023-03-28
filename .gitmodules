@@ -31,3 +31,6 @@
 [submodule "code/sdc.tests"]
 	path = code/sdc.tests
 	url = https://github.com/uva-bi-sdad/sdc.tests.git
+[submodule "data/sdc.environment"]
+	path = data/sdc.environment
+	url = https://github.com/uva-bi-sdad/sdc.environment.git
