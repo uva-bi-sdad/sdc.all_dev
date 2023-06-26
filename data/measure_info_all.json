@@ -11074,6 +11074,7 @@
         }
     },
     "access_care_indicator": {
+        "aggregation_method": "",
         "category": "Health Opportunity Index",
         "citations": "",
         "data_type": "numeric",
@@ -11096,6 +11097,7 @@
         "unit": ""
     },
     "acs_postsecondary_count": {
+        "aggregation_method": "",
         "category": "Education",
         "citations": "",
         "data_type": "numeric",
@@ -11120,6 +11122,7 @@
         "unit": ""
     },
     "acs_postsecondary_percent": {
+        "aggregation_method": "",
         "category": "Education",
         "citations": "",
         "data_type": "numeric",
@@ -11144,6 +11147,7 @@
         "unit": "%"
     },
     "adequate": {
+        "aggregation_method": "",
         "category": "Health",
         "citations": "",
         "data_type": "numeric",
@@ -11166,6 +11170,7 @@
         "unit": ""
     },
     "adequate_pc": {
+        "aggregation_method": "",
         "category": "Health",
         "citations": "",
         "data_type": "numeric",
@@ -11188,6 +11193,7 @@
         "unit": ""
     },
     "adequateplus": {
+        "aggregation_method": "",
         "category": "Health",
         "citations": "",
         "data_type": "numeric",
@@ -11210,6 +11216,7 @@
         "unit": ""
     },
     "adequateplus_pc": {
+        "aggregation_method": "",
         "category": "Health",
         "citations": "",
         "data_type": "numeric",
@@ -11232,6 +11239,7 @@
         "unit": ""
     },
     "affordability_indicator": {
+        "aggregation_method": "",
         "category": "Health Opportunity Index",
         "citations": "",
         "data_type": "numeric",
@@ -11254,6 +11262,7 @@
         "unit": ""
     },
     "air_quality_indicator": {
+        "aggregation_method": "",
         "category": "Health Opportunity Index",
         "citations": "",
         "data_type": "numeric",
@@ -11276,6 +11285,7 @@
         "unit": ""
     },
     "alice_pct": {
+        "aggregation_method": "",
         "category": "Financial Well Being",
         "citations": "",
         "data_type": "numeric",
@@ -11484,6 +11494,7 @@
         "unit": ""
     },
     "average_years_schooling": {
+        "aggregation_method": "",
         "category": "Education",
         "citations": "",
         "data_type": "numeric",
@@ -11530,6 +11541,7 @@
         "unit": "Mb/s"
     },
     "avg_monthly_rate": {
+        "aggregation_method": "",
         "category": "Behavioral Health, Substance Use Disorder and Recovery",
         "citations": "",
         "data_type": "numeric",
@@ -11621,6 +11633,7 @@
         "unit": ""
     },
     "community_environment_indicator": {
+        "aggregation_method": "",
         "category": "Health Opportunity Index",
         "citations": "",
         "data_type": "numeric",
@@ -11666,6 +11679,7 @@
         "unit": ""
     },
     "consumer_opportunity_indicator": {
+        "aggregation_method": "",
         "category": "Health Opportunity Index",
         "citations": "",
         "data_type": "numeric",
@@ -11688,6 +11702,7 @@
         "unit": ""
     },
     "daycare_capacity": {
+        "aggregation_method": "",
         "category": "Education",
         "citations": "",
         "data_type": "numeric",
@@ -11714,6 +11729,7 @@
         "unit": ""
     },
     "daycare_min_drivetime": {
+        "aggregation_method": "",
         "category": "Education",
         "citations": "",
         "data_type": "numeric",
@@ -11745,6 +11761,7 @@
         "unit": ""
     },
     "daycare_over_4_per_1k": {
+        "aggregation_method": "",
         "category": "Education",
         "citations": [
             "wan12",
@@ -11791,6 +11808,7 @@
         "unit": ""
     },
     "daycare_per_1k": {
+        "aggregation_method": "",
         "category": "Education",
         "citations": [
             "wan12",
@@ -11844,6 +11862,7 @@
         "unit": ""
     },
     "daycare_under_10_per_1k": {
+        "aggregation_method": "",
         "category": "Education",
         "citations": [
             "wan12",
@@ -11890,6 +11909,7 @@
         "unit": ""
     },
     "degrees_awarded_first_professional": {
+        "aggregation_method": "",
         "category": "Health",
         "citations": "",
         "data_type": "numeric",
@@ -11912,6 +11932,7 @@
         "unit": ""
     },
     "degrees_awarded_graduate": {
+        "aggregation_method": "",
         "category": "Health",
         "citations": "",
         "data_type": "numeric",
@@ -11934,6 +11955,7 @@
         "unit": ""
     },
     "degrees_awarded_two_year": {
+        "aggregation_method": "",
         "category": "Health",
         "citations": "",
         "data_type": "numeric",
@@ -11956,6 +11978,7 @@
         "unit": ""
     },
     "degrees_awarded_undergraduate": {
+        "aggregation_method": "",
         "category": "Health",
         "citations": "",
         "data_type": "numeric",
@@ -11978,6 +12001,7 @@
         "unit": ""
     },
     "dent_2sfca": {
+        "aggregation_method": "",
         "category": "Health",
         "citations": [
             "lou04",
@@ -12005,6 +12029,7 @@
         "unit": ""
     },
     "dent_cnt": {
+        "aggregation_method": "",
         "category": "Health",
         "citations": "",
         "data_type": "numeric",
@@ -12027,6 +12052,7 @@
         "unit": ""
     },
     "dent_e2sfca": {
+        "aggregation_method": "",
         "category": "Health",
         "citations": [
             "lou04",
@@ -12077,12 +12103,13 @@
         "unit": "devices"
     },
     "earnings_per_job": {
+        "aggregation_method": "",
         "category": "Employment/Workforce Development",
         "citations": "",
         "data_type": "decimal",
         "equity_category": "Status",
         "layer": "",
-        "long_description": "Earnings per job is calculated based on the GDP and Personal Income table from the Bureau of Economic Analysis.",
+        "long_description": "Earnings per job is calculated based on the GDP and Personal Income table from the Bureau of Economic Analysis. For splitting the multi county observations in the df,we can perform splitting from 83 since thats when multi county occurs. So basically we have + and , which binds them so we need to split based on those signs, first we target all the + and we target only rows where there is , and splitting is done. Initially we are removing (,VA) from names and attaching them at the end of the process for our convenience. We are having the same values to be repeated for particular combination. The split entries are expanded into multiple rows using unnest function. In simple terms, first stage of splitting using + sign from row 83 then slitted rows are expanded. next splitting is for particular rows which contains , and then splitted entries are expanded.For example fairfax county, fairfax city, falls church city will have same values after splitting. For filling the Geofips, we are storing corresponding Geofips values in a vector and assigning it to the corresponding rows in correct order",
         "long_name": "Earnings per job",
         "measure_type": "",
         "short_description": "Average of earnings per job.",
@@ -12099,6 +12126,7 @@
         "unit": "dollars"
     },
     "economic_opportunity_indicator": {
+        "aggregation_method": "",
         "category": "Health Opportunity Index",
         "citations": "",
         "data_type": "numeric",
@@ -12121,6 +12149,7 @@
         "unit": ""
     },
     "education_indicator": {
+        "aggregation_method": "",
         "category": "Health Opportunity Index",
         "citations": "",
         "data_type": "numeric",
@@ -12143,6 +12172,7 @@
         "unit": ""
     },
     "emp_rate": {
+        "aggregation_method": "",
         "category": "Employment/Workforce Development",
         "citations": "",
         "data_type": "decimal",
@@ -12166,6 +12196,7 @@
         "unit": "people"
     },
     "employment_access_indicator": {
+        "aggregation_method": "",
         "category": "Health Opportunity Index",
         "citations": "",
         "data_type": "numeric",
@@ -12188,6 +12219,7 @@
         "unit": ""
     },
     "ems_3sfca": {
+        "aggregation_method": "",
         "category": "Health",
         "citations": [
             "lou04",
@@ -12215,6 +12247,7 @@
         "unit": ""
     },
     "ems_cnt": {
+        "aggregation_method": "",
         "category": "Health",
         "citations": "",
         "data_type": "numeric",
@@ -12237,6 +12270,7 @@
         "unit": ""
     },
     "ems_near_10_median": {
+        "aggregation_method": "",
         "category": "Health",
         "citations": "",
         "data_type": "numeric",
@@ -12328,6 +12362,7 @@
         "unit": ""
     },
     "food_accessibility_indicator": {
+        "aggregation_method": "",
         "category": "Health Opportunity Index",
         "citations": "",
         "data_type": "numeric",
@@ -12373,6 +12408,7 @@
         "unit": "dollar"
     },
     "gini_index": {
+        "aggregation_method": "",
         "category": "Financial Well Being",
         "citations": "",
         "data_type": "decimal",
@@ -12395,6 +12431,7 @@
         "unit": ""
     },
     "health_literacy_estimate": {
+        "aggregation_method": "",
         "category": "Education",
         "citations": [
             "savitz20",
@@ -12425,6 +12462,7 @@
         "unit": ""
     },
     "health_opportunity_indicator": {
+        "aggregation_method": "",
         "category": "Health Opportunity Index",
         "citations": "",
         "data_type": "numeric",
@@ -12515,6 +12553,7 @@
         "unit": ""
     },
     "hlth_ins_pct": {
+        "aggregation_method": "",
         "category": "Health",
         "citations": "",
         "data_type": "numeric",
@@ -12538,6 +12577,7 @@
         "unit": ""
     },
     "hosp_3sfca": {
+        "aggregation_method": "",
         "category": "Health",
         "citations": [
             "lou04",
@@ -12565,6 +12605,7 @@
         "unit": ""
     },
     "hosp_cnt": {
+        "aggregation_method": "",
         "category": "Health",
         "citations": "",
         "data_type": "numeric",
@@ -12587,6 +12628,7 @@
         "unit": ""
     },
     "hosp_near_10_median": {
+        "aggregation_method": "",
         "category": "Health",
         "citations": "",
         "data_type": "numeric",
@@ -12609,6 +12651,7 @@
         "unit": ""
     },
     "inadequate": {
+        "aggregation_method": "",
         "category": "Health",
         "citations": "",
         "data_type": "numeric",
@@ -12631,6 +12674,7 @@
         "unit": ""
     },
     "inadequate_pc": {
+        "aggregation_method": "",
         "category": "Health",
         "citations": "",
         "data_type": "numeric",
@@ -12653,6 +12697,7 @@
         "unit": ""
     },
     "income_inequality_indicator": {
+        "aggregation_method": "",
         "category": "Health Opportunity Index",
         "citations": "",
         "data_type": "numeric",
@@ -12861,6 +12906,7 @@
         "unit": ""
     },
     "intermediate": {
+        "aggregation_method": "",
         "category": "Health",
         "citations": "",
         "data_type": "numeric",
@@ -12883,6 +12929,7 @@
         "unit": ""
     },
     "intermediate_pc": {
+        "aggregation_method": "",
         "category": "Health",
         "citations": "",
         "data_type": "numeric",
@@ -12997,6 +13044,7 @@
         "unit": ""
     },
     "job_participate_rate": {
+        "aggregation_method": "",
         "category": "Employment/Workforce Development",
         "citations": "",
         "data_type": "decimal",
@@ -13020,6 +13068,7 @@
         "unit": "people"
     },
     "job_participation_indicator": {
+        "aggregation_method": "",
         "category": "Health Opportunity Index",
         "citations": "",
         "data_type": "numeric",
@@ -13042,6 +13091,7 @@
         "unit": ""
     },
     "material_deprivation_indicator": {
+        "aggregation_method": "",
         "category": "Health Opportunity Index",
         "citations": "",
         "data_type": "numeric",
@@ -13064,6 +13114,7 @@
         "unit": ""
     },
     "mean_read_pass_rate": {
+        "aggregation_method": "",
         "category": "Education",
         "citations": "",
         "data_type": "numeric",
@@ -13088,6 +13139,7 @@
         "unit": "%"
     },
     "median_household_income": {
+        "aggregation_method": "",
         "category": "Financial Well Being",
         "citations": "",
         "data_type": "integer",
@@ -13111,6 +13163,7 @@
         "unit": "dollars"
     },
     "median_read_pass_rate": {
+        "aggregation_method": "",
         "category": "Education",
         "citations": "",
         "data_type": "numeric",
@@ -13135,6 +13188,7 @@
         "unit": "%"
     },
     "mental_3sfca": {
+        "aggregation_method": "",
         "category": "Health",
         "citations": [
             "lou04",
@@ -13162,6 +13216,7 @@
         "unit": ""
     },
     "mental_cnt": {
+        "aggregation_method": "",
         "category": "Health",
         "citations": "",
         "data_type": "numeric",
@@ -13184,6 +13239,7 @@
         "unit": ""
     },
     "mental_near_10_median": {
+        "aggregation_method": "",
         "category": "Health",
         "citations": "",
         "data_type": "numeric",
@@ -13801,6 +13857,7 @@
         "unit": ""
     },
     "no_hlth_ins_pct": {
+        "aggregation_method": "",
         "category": "Health",
         "citations": "",
         "data_type": "numeric",
@@ -14238,6 +14295,7 @@
         "unit": ""
     },
     "num_post_hs_edu": {
+        "aggregation_method": "",
         "category": "Education",
         "citations": "",
         "data_type": "numeric",
@@ -14305,6 +14363,7 @@
         "unit": ""
     },
     "obgyn_2sfca": {
+        "aggregation_method": "",
         "category": "Health",
         "citations": [
             "lou04",
@@ -14332,6 +14391,7 @@
         "unit": ""
     },
     "obgyn_3sfca": {
+        "aggregation_method": "",
         "category": "Health",
         "citations": [
             "lou04",
@@ -14359,6 +14419,7 @@
         "unit": ""
     },
     "obgyn_cnt": {
+        "aggregation_method": "",
         "category": "Health",
         "citations": "",
         "data_type": "numeric",
@@ -14381,6 +14442,7 @@
         "unit": ""
     },
     "obgyn_e2sfca": {
+        "aggregation_method": "",
         "category": "Health",
         "citations": [
             "lou04",
@@ -14454,6 +14516,7 @@
         "unit": "households"
     },
     "ped_3sfca": {
+        "aggregation_method": "",
         "category": "Health",
         "citations": [
             "lou04",
@@ -14481,6 +14544,7 @@
         "unit": ""
     },
     "ped_cnt": {
+        "aggregation_method": "",
         "category": "Health",
         "citations": "",
         "data_type": "numeric",
@@ -14503,6 +14567,7 @@
         "unit": ""
     },
     "ped_e2sfca": {
+        "aggregation_method": "",
         "category": "Health",
         "citations": [
             "lou04",
@@ -14643,6 +14708,7 @@
         "unit": ""
     },
     "perc_annual_checkup": {
+        "aggregation_method": "",
         "category": "",
         "citations": "",
         "data_type": "numeric",
@@ -14711,6 +14777,7 @@
         "unit": ""
     },
     "perc_dental_visit": {
+        "aggregation_method": "",
         "category": "",
         "citations": "",
         "data_type": "numeric",
@@ -15156,6 +15223,7 @@
         "unit": ""
     },
     "perc_poor_ment_hlth_days_14_and_over": {
+        "aggregation_method": "",
         "category": "Health",
         "citations": "",
         "data_type": "numeric",
@@ -15178,6 +15246,7 @@
         "unit": ""
     },
     "perc_poor_phys_hlth_days_14_and_over": {
+        "aggregation_method": "",
         "category": "Health",
         "citations": "",
         "data_type": "numeric",
@@ -15266,6 +15335,7 @@
         "unit": ""
     },
     "perc_post_hs_edu": {
+        "aggregation_method": "",
         "category": "Education",
         "citations": "",
         "data_type": "numeric",
@@ -15556,6 +15626,7 @@
         "unit": ""
     },
     "pop_churning_indicator": {
+        "aggregation_method": "",
         "category": "Health Opportunity Index",
         "citations": "",
         "data_type": "numeric",
@@ -15578,6 +15649,7 @@
         "unit": ""
     },
     "pop_density_indicator": {
+        "aggregation_method": "",
         "category": "Health Opportunity Index",
         "citations": "",
         "data_type": "numeric",
@@ -15843,6 +15915,7 @@
         "unit": ""
     },
     "poverty_pct": {
+        "aggregation_method": "",
         "category": "Financial Well Being",
         "citations": "",
         "data_type": "numeric",
@@ -15865,6 +15938,7 @@
         "unit": ""
     },
     "prevent_hosp_rate": {
+        "aggregation_method": "",
         "category": "Health",
         "citations": "",
         "data_type": "numeric",
@@ -15887,6 +15961,7 @@
         "unit": ""
     },
     "primcare_2sfca": {
+        "aggregation_method": "",
         "category": "Health",
         "citations": [
             "lou04",
@@ -15914,6 +15989,7 @@
         "unit": ""
     },
     "primcare_3sfca": {
+        "aggregation_method": "",
         "category": "Health",
         "citations": [
             "lou04",
@@ -15941,6 +16017,7 @@
         "unit": ""
     },
     "primcare_cnt": {
+        "aggregation_method": "",
         "category": "Health",
         "citations": "",
         "data_type": "numeric",
@@ -15963,6 +16040,7 @@
         "unit": ""
     },
     "primcare_e2sfca": {
+        "aggregation_method": "",
         "category": "Health",
         "citations": [
             "lou04",
@@ -16948,6 +17026,7 @@
         "unit": "households"
     },
     "schools_2year_min_drivetime": {
+        "aggregation_method": "",
         "category": "Education",
         "citations": "",
         "data_type": "numeric",
@@ -16984,6 +17063,7 @@
         "unit": "minutes"
     },
     "schools_2year_per_100k": {
+        "aggregation_method": "",
         "category": "Education",
         "citations": [
             "wan12",
@@ -17030,6 +17110,7 @@
         "unit": "per 100k"
     },
     "schools_2year_with_biomedical_program_per_100k": {
+        "aggregation_method": "",
         "category": "Education",
         "citations": [
             "wan12",
@@ -17083,6 +17164,7 @@
         "unit": "per 100k"
     },
     "schools_2year_with_computer_program_per_100k": {
+        "aggregation_method": "",
         "category": "Education",
         "citations": [
             "wan12",
@@ -17136,6 +17218,7 @@
         "unit": "per 100k"
     },
     "schools_2year_with_engineering_program_per_100k": {
+        "aggregation_method": "",
         "category": "Education",
         "citations": [
             "wan12",
@@ -17189,6 +17272,7 @@
         "unit": "per 100k"
     },
     "schools_2year_with_physical_program_per_100k": {
+        "aggregation_method": "",
         "category": "Education",
         "citations": [
             "wan12",
@@ -17242,6 +17326,7 @@
         "unit": "per 100k"
     },
     "schools_2year_with_science_program_per_100k": {
+        "aggregation_method": "",
         "category": "Education",
         "citations": [
             "wan12",
@@ -17295,6 +17380,7 @@
         "unit": "per 100k"
     },
     "schools_under2year_min_drivetime": {
+        "aggregation_method": "",
         "category": "Education",
         "citations": "",
         "data_type": "numeric",
@@ -17331,6 +17417,7 @@
         "unit": "minutes"
     },
     "schools_under2year_per_100k": {
+        "aggregation_method": "",
         "category": "Education",
         "citations": [
             "wan12",
@@ -17377,6 +17464,7 @@
         "unit": "per 100k"
     },
     "segregation_indicator": {
+        "aggregation_method": "",
         "category": "Health Opportunity Index",
         "citations": "",
         "data_type": "numeric",
@@ -17399,6 +17487,7 @@
         "unit": ""
     },
     "subs_3sfca": {
+        "aggregation_method": "",
         "category": "Health",
         "citations": [
             "lou04",
@@ -17426,6 +17515,7 @@
         "unit": ""
     },
     "subs_cnt": {
+        "aggregation_method": "",
         "category": "Health",
         "citations": "",
         "data_type": "numeric",
@@ -17448,6 +17538,7 @@
         "unit": ""
     },
     "subs_near_10_median": {
+        "aggregation_method": "",
         "category": "Health",
         "citations": "",
         "data_type": "numeric",
@@ -17835,6 +17926,7 @@
         "unit": ""
     },
     "urgent_3sfca": {
+        "aggregation_method": "",
         "category": "Health",
         "citations": [
             "lou04",
@@ -17864,6 +17956,7 @@
         "unit": ""
     },
     "urgent_cnt": {
+        "aggregation_method": "",
         "category": "Health",
         "citations": "",
         "data_type": "numeric",
@@ -17888,6 +17981,7 @@
         "unit": ""
     },
     "urgent_near_10_median": {
+        "aggregation_method": "",
         "category": "Health",
         "citations": "",
         "data_type": "numeric",
@@ -17912,6 +18006,7 @@
         "unit": ""
     },
     "vi_household": {
+        "aggregation_method": "",
         "category": "Health",
         "citations": "",
         "data_type": "decimal",
@@ -17934,6 +18029,7 @@
         "unit": ""
     },
     "vi_housing_transportation": {
+        "aggregation_method": "",
         "category": "Health",
         "citations": "",
         "data_type": "decimal",
@@ -17956,6 +18052,7 @@
         "unit": ""
     },
     "vi_overall": {
+        "aggregation_method": "",
         "category": "Health",
         "citations": "",
         "data_type": "decimal",
@@ -17978,6 +18075,7 @@
         "unit": ""
     },
     "vi_race_ethnicity": {
+        "aggregation_method": "",
         "category": "Health",
         "citations": "",
         "data_type": "decimal",
@@ -18000,6 +18098,7 @@
         "unit": ""
     },
     "vi_socioeconomic": {
+        "aggregation_method": "",
         "category": "Health",
         "citations": "",
         "data_type": "decimal",
@@ -18934,6 +19033,7 @@
         "unit": "person"
     },
     "walkability_indicator": {
+        "aggregation_method": "",
         "category": "Health Opportunity Index",
         "citations": "",
         "data_type": "numeric",
@@ -18978,6 +19078,7 @@
         "unit": ""
     },
     "wellness_disparity_indicator": {
+        "aggregation_method": "",
         "category": "Health Opportunity Index",
         "citations": "",
         "data_type": "numeric",
