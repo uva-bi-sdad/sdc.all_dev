@@ -4,7 +4,10 @@ on:
     - cron: '0 9 * * *' # once a day at 9 am runs
   push: 
     branches:
-      - 'main'
+      - main
+  pull_request:
+    branches:
+      - main
 jobs:
   housekeeping:
     runs-on: ubuntu-latest
