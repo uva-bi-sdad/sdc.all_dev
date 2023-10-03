@@ -34,6 +34,3 @@
 [submodule "data/sdc.environment"]
 	path = data/sdc.environment
 	url = https://github.com/uva-bi-sdad/sdc.environment.git
-[submodule "data/sdc.public_safety"]
-	path = data/sdc.public_safety
-	url = https://github.com/uva-bi-sdad/sdc.public_safety.git
