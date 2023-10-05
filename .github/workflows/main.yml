@@ -46,19 +46,19 @@ jobs:
         find docs -name "*.html" | cut -c 5- > docs/temp
         printf "<h4>Code Tests</h4>" >> docs/index.html
         printf "<ol>\n" >> docs/index.html
-        cat docs/temp | while read line; do if echo ${line} | grep "code"; then printf "\t<li><a href='https://uva-bi-sdad.github.io/sdc.all_dev/${line}'> $line </a></li>\n" >> docs/index.html; fi; done
+        cat docs/temp | while read line; do if echo ${line} | grep "test_code"; then printf "\t<li><a href='https://uva-bi-sdad.github.io/sdc.all_dev/${line}'> $line </a></li>\n" >> docs/index.html; fi; done
         printf "</ol>\n" >> docs/index.html
         printf "<h4>Data Tests</h4>" >> docs/index.html
         printf "<ol>\n" >> docs/index.html
-        cat docs/temp | while read line; do if echo ${line} | grep "data"; then printf "\t<li><a href='https://uva-bi-sdad.github.io/sdc.all_dev/${line}'> $line </a></li>\n" >> docs/index.html; fi; done
+        cat docs/temp | while read line; do if echo ${line} | grep "test_data"; then printf "\t<li><a href='https://uva-bi-sdad.github.io/sdc.all_dev/${line}'> $line </a></li>\n" >> docs/index.html; fi; done
         printf "</ol>\n" >> docs/index.html
         printf "<h4>File Name Tests</h4>" >> docs/index.html
         printf "<ol>\n" >> docs/index.html
-        cat docs/temp | while read line; do if echo ${line} | grep "file_name"; then printf "\t<li><a href='https://uva-bi-sdad.github.io/sdc.all_dev/${line}'> $line </a></li>\n" >> docs/index.html; fi; done
+        cat docs/temp | while read line; do if echo ${line} | grep "test_file_name"; then printf "\t<li><a href='https://uva-bi-sdad.github.io/sdc.all_dev/${line}'> $line </a></li>\n" >> docs/index.html; fi; done
         printf "</ol>\n" >> docs/index.html
         printf "<h4>Measure Info Tests</h4>" >> docs/index.html
         printf "<ol>\n" >> docs/index.html
-        cat docs/temp | while read line; do if echo ${line} | grep "measure_info"; then printf "\t<li><a href='https://uva-bi-sdad.github.io/sdc.all_dev/${line}'> $line </a></li>\n" >> docs/index.html; fi; done
+        cat docs/temp | while read line; do if echo ${line} | grep "test_measure_info"; then printf "\t<li><a href='https://uva-bi-sdad.github.io/sdc.all_dev/${line}'> $line </a></li>\n" >> docs/index.html; fi; done
         printf "</ol>\n" >> docs/index.html
         printf "<h4>Inventory Reports</h4>" >> docs/index.html
         printf "<ol>\n" >> docs/index.html
