@@ -135,7 +135,7 @@ jobs:
       env:
         SSH_DEPLOY_KEY: ${{ secrets.VARIABLES_DEPLOY_KEY }}
       with:
-        source-directory: ${{ github.workspace }}/variables
+        source-directory: variables
         destination-github-username: 'uva-bi-sdad'
         destination-repository-name: 'sdc.variables'
         target-branch: main   
