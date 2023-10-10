@@ -129,7 +129,7 @@ jobs:
         pip install -r ${{ github.workspace }}/sdc.editor/code/requirements.txt
     - name: Generate the variables data
       run: |
-        python ${{ github.workspace }}/sdc.editor/code/edit_99_combine_split_by_variable.py -i ${{ github.repository }} -o ${{ github.repository }}/variables
+        python ${{ github.workspace }}/sdc.editor/code/edit_99_combine_split_by_variable.py -i ${{ github.workspace }} -o ${{ github.workspace }}/variables
     - name: Push directory to another repository
       uses: cpina/github-action-push-to-another-repository@main
       env:
