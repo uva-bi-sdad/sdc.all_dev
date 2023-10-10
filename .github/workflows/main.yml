@@ -123,7 +123,7 @@ jobs:
         path: ${{ github.workspace }}/sdc.editor
     - name: List files in the repository (Useful for debugging)
       run: |
-        ls -la ${{ github.workspace }}
+        ls -la ${{ github.workspace }}/sdc.editor
     - name: Install requirements for the editor
       run: |
         pip install -r ${{ github.workspace }}/sdc.editor/code/requirements.txt
