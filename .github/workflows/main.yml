@@ -120,7 +120,10 @@ jobs:
       uses: actions/checkout@master
       with:
         repository: uva-bi-sdad/sdc.editor
-        path: ${{ github.repository }}/sdc.editor/
+        path: sdc.editor/
+    - name: Check the tree
+    - run: | 
+        tree .
     - name: Install requirements for the editor
       run: |
         pip install -r ${{ github.repository }}/sdc.editor/code/requirements.txt
