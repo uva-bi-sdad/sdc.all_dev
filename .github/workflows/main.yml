@@ -121,9 +121,9 @@ jobs:
       with:
         repository: uva-bi-sdad/sdc.editor
         path: sdc.editor/
-    - name: Check the tree
-    - run: | 
-        tree .
+    - name: List files in the repository (Useful for debugging)
+      run: |
+        tree ${{ github.workspace }}
     - name: Install requirements for the editor
       run: |
         pip install -r ${{ github.repository }}/sdc.editor/code/requirements.txt
