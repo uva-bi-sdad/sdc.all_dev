@@ -93,7 +93,30 @@ jobs:
         source-directory: .
         destination-github-username: 'uva-bi-sdad'
         destination-repository-name: 'sdc.all'
-        target-branch: main        
+        target-branch: main   
+    - name: Generate a variables folder and export all the data there
+      run: mkdir -p variables
+    - name: Check out editor repository code
+      uses: actions/checkout@master
+      with:
+        repository: uva-bi-sdad/sdc.editor
+        path: sdc.editor/
+    - name: Install requirements for the editor
+      run: |
+        pip install -r sdc.editor/code/requirements.txt
+    - name: Generate the variables data
+      run: |
+        python sdc.editor/code/edit_99_combine_split_by_variable.py -i ${{ github.repository }} -o ${{ github.repository }}/variables
+    - name: Push directory to another repository
+      uses: cpina/github-action-push-to-another-repository@main
+      env:
+        SSH_DEPLOY_KEY: ${{ secrets.VARIABLES_DEPLOY_KEY }}
+      with:
+        source-directory: .
+        destination-github-username: 'uva-bi-sdad'
+        destination-repository-name: 'sdc.variables'
+        target-branch: main   
+    
   on_fail:
     if: ${{ failure() }} # still push the total public one to sdc.all on fail
     needs: housekeeping
