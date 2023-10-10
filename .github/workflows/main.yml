@@ -8,6 +8,12 @@ on:
   pull_request:
     branches:
       - main
+      
+# Cacnel previous runs if a new push is sent
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+  
 jobs:
   housekeeping:
     runs-on: ubuntu-latest
@@ -94,6 +100,17 @@ jobs:
         destination-github-username: 'uva-bi-sdad'
         destination-repository-name: 'sdc.all'
         target-branch: main   
+    # Running the GitHub pages here so that you don't need to run runners twice
+    - name: Setup Pages
+      uses: actions/configure-pages@v3
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v2
+      with:
+      # Upload entire repository
+        path: 'parent/${{ github.event.repository.name }}/docs'
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v2
     - name: Generate a variables folder and export all the data there
       run: mkdir -p variables
     - name: Check out editor repository code
