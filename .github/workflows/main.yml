@@ -127,6 +127,9 @@ jobs:
     - name: Install requirements for the editor
       run: |
         pip install -r ${{ github.workspace }}/sdc.editor/code/requirements.txt
+    - name: Copy over a measure_info_all.json file
+      run: |
+        cp ${{ github.workspace }}/data/measure_info_all.json ${{ github.workspace }}/variables
     - name: Generate the variables data
       run: |
         python ${{ github.workspace }}/sdc.editor/code/edit_99_combine_split_by_variable.py -i ${{ github.workspace }} -o ${{ github.workspace }}/variables
