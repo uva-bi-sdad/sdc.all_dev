@@ -114,8 +114,8 @@ jobs:
     - name: Deploy to GitHub Pages
       id: deployment
       uses: actions/deploy-pages@v2
-    - name: Generate a variables folder and export all the data there
-      run: mkdir -p variables
+    - name: Generate a measures folder and export all the data there
+      run: mkdir -p measures
     - name: Check out editor repository code
       uses: actions/checkout@master
       with:
@@ -129,18 +129,18 @@ jobs:
         pip install -r ${{ github.workspace }}/sdc.editor/code/requirements.txt
     - name: Copy over a measure_info_all.json file
       run: |
-        cp ${{ github.workspace }}/data/measure_info_all.json ${{ github.workspace }}/variables
-    - name: Generate the variables data
+        cp ${{ github.workspace }}/data/measure_info_all.json ${{ github.workspace }}/measures
+    - name: Generate the measures data
       run: |
-        python ${{ github.workspace }}/sdc.editor/code/edit_99_combine_split_by_variable.py -i ${{ github.workspace }} -o ${{ github.workspace }}/variables
+        python ${{ github.workspace }}/sdc.editor/code/edit_99_combine_split_by_variable.py -i ${{ github.workspace }} -o ${{ github.workspace }}/measures
     - name: Push directory to another repository
       uses: cpina/github-action-push-to-another-repository@main
       env:
         SSH_DEPLOY_KEY: ${{ secrets.VARIABLES_DEPLOY_KEY }}
       with:
-        source-directory: variables
+        source-directory: measures
         destination-github-username: 'uva-bi-sdad'
-        destination-repository-name: 'sdc.variables'
+        destination-repository-name: 'sdc.measures'
         target-branch: main   
     
   on_fail:
