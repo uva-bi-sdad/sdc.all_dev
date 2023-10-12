@@ -132,7 +132,7 @@ jobs:
         cp ${{ github.workspace }}/data/measure_info_all.json ${{ github.workspace }}/measures
     - name: Generate the measures data
       run: |
-        python ${{ github.workspace }}/sdc.editor/code/edit_combine_split_by_variable.py -i ${{ github.workspace }} -o ${{ github.workspace }}/measures
+        python ${{ github.workspace }}/sdc.editor/code/downstream_edit_generate_placeholder_folders.py -i ${{ github.workspace }} -o ${{ github.workspace }}/measures
     - name: Push directory to another repository
       uses: cpina/github-action-push-to-another-repository@main
       env:
